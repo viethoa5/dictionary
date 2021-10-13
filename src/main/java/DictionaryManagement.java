@@ -28,7 +28,7 @@ public class DictionaryManagement {
                 String s = scanner.nextLine();
                 String[] word = s.split("\\t", 2);
                 x.setWord_target(word[0]);
-                x.setWord_expland(word[1]);
+                x.setWord_explain(word[1]);
                 Dictionary.wordArrays.add(x);
             }
         }
@@ -38,7 +38,7 @@ public class DictionaryManagement {
         Word a = (Word)Dictionary.wordArrays.stream().filter((w) -> {
             return tar.equals(w.getWord_target());
         }).findFirst().orElse(null);
-        System.out.println(a.getWord_target() + ": " + a.getWord_expland());
+        System.out.println(a.getWord_target() + ": " + a.getWord_explain());
         return a != null;
     }
 
@@ -46,7 +46,7 @@ public class DictionaryManagement {
         try {
             FileWriter writer = new FileWriter("dictionaries.txt");
             for (int i = 0; i < Dictionary.size; i++) {
-                writer.write(Dictionary.wordArrays.get(i).getWord_target() + " " + Dictionary.wordArrays.get(i).getWord_expland() + "\n");
+                writer.write(Dictionary.wordArrays.get(i).getWord_target() + " " + Dictionary.wordArrays.get(i).getWord_explain() + "\n");
             }
             writer.close();
         } catch (IOException e) {
@@ -86,7 +86,7 @@ public class DictionaryManagement {
             if (Dictionary.wordArrays.get(i).getWord_target().equals(wordEdit)) {
                 System.out.print("Nhập nghĩa mong muốn: ");
                 String new_target = sc.nextLine();
-                Dictionary.wordArrays.get(i).setWord_expland(new_target);
+                Dictionary.wordArrays.get(i).setWord_explain(new_target);
             }
         }
     }
