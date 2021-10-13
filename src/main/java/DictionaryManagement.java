@@ -20,7 +20,7 @@ public class DictionaryManagement {
     }
 
     public void insertFromFile() throws IOException {
-        Scanner scanner = new Scanner(Paths.get("main/dictionaries.txt"), "UTF-8");
+        Scanner scanner = new Scanner(Paths.get("src/main/dictionaries.txt"), "UTF-8");
 
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {
@@ -38,6 +38,7 @@ public class DictionaryManagement {
         Word a = (Word)Dictionary.wordArrays.stream().filter((w) -> {
             return tar.equals(w.getWord_target());
         }).findFirst().orElse(null);
+        System.out.println(a.getWord_target() + ": " + a.getWord_expland());
         return a != null;
     }
 
