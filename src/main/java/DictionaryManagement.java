@@ -20,4 +20,26 @@ public class DictionaryManagement {
             Dictionary.wordArrays.add(words);
         }
     }
+    public void insertFromFile() throws IOException {
+        Scanner scanner = new Scanner(Paths.get("src/main/dictionaries.txt"), "UTF-8");
+
+        while (scanner.hasNext()) {
+            while (scanner.hasNextLine()) {
+                Word x = new Word();
+                String s = scanner.nextLine();
+                String[] word = s.split("\\t", 2);
+                x.setWord_target(word[0]);
+                x.setWord_explain(word[1]);
+                Dictionary.wordArrays.add(x);
+            }
+        }
+    }
+
+    public boolean dictionaryLookup(String tar) {
+        Word a = (Word)Dictionary.wordArrays.stream().filter((w) -> {
+            return tar.equals(w.getWord_target());
+        }).findFirst().orElse(null);
+        System.out.println(a.getWord_target() + ":  " + a.getWord_explain());
+        return a != null;
+    }
 }

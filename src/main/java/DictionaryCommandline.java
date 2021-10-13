@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
-    DictionaryManagement manage = new DictionaryManagement();
+    DictionaryManagement  manage = new DictionaryManagement();
 
     public void showAllWords() {
         System.out.println("\t\t\t\tNo\t|" + "English" + "\t\t\t  | VietNamese ");
