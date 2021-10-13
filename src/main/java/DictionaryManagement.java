@@ -9,7 +9,6 @@ public class DictionaryManagement {
     public void insertFromCommandline() {
         Scanner scan = new Scanner(System.in);
         int numbers = scan.nextInt();
-        Dictionary.size += numbers;
         scan.nextLine();
         for (int i = 0; i < numbers; i++) {
             String define = scan.nextLine();
@@ -45,7 +44,7 @@ public class DictionaryManagement {
     public void dictionaryExportToFile() {
         try {
             FileWriter writer = new FileWriter("dictionaries.txt");
-            for (int i = 0; i < Dictionary.size; i++) {
+            for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
                 writer.write(Dictionary.wordArrays.get(i).getWord_target() + " " + Dictionary.wordArrays.get(i).getWord_explain() + "\n");
             }
             writer.close();
@@ -62,17 +61,15 @@ public class DictionaryManagement {
         String word_explain = sc.nextLine();
         Word newWord = new Word(word_target, word_explain);
         Dictionary.wordArrays.add(newWord);
-        Dictionary.size++;
     }
 
     public void deleteWord() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần xóa (tiếng Anh): ");
         String wordDelete = sc.next();
-        for (int i = 0; i < Dictionary.size; i++) {
+        for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
             if (Dictionary.wordArrays.get(i).getWord_target().equals(wordDelete)) {
                 Dictionary.wordArrays.remove(i);
-                Dictionary.size--;
                 break;
             }
         }
@@ -82,7 +79,7 @@ public class DictionaryManagement {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần sửa(tiếng Anh): ");
         String wordEdit = sc.next();
-        for (int i = 0; i < Dictionary.size; i++) {
+        for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
             if (Dictionary.wordArrays.get(i).getWord_target().equals(wordEdit)) {
                 System.out.print("Nhập nghĩa mong muốn: ");
                 String new_target = sc.nextLine();
