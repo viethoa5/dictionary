@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class DictionaryCommandline {
     DictionaryManagement manage = new DictionaryManagement();
     public void showAllWords() {
-        System.out.println("No   | English     | Vietnamese");
+        System.out.println("\t\t\t\tNo\t|" + "English" + "\t\t\t  | VietNamese ");
         for(int i = 0; i < Dictionary.size; i++) {
-                System.out.print(i+1);
-                System.out.print("   | " + StringUtils.capitalize(Dictionary.wordArrays.get(i).getWord_target()) +"       | ");
-                System.out.print(StringUtils.capitalize(Dictionary.wordArrays.get(i).getWord_expland()));
+                System.out.print("\t\t\t\t"+(i+1)+"\t| ");
+                System.out.printf("%-20s| ", StringUtils.capitalize(Dictionary.wordArrays.get(i).getWord_target()));
+                System.out.print( StringUtils.capitalize(Dictionary.wordArrays.get(i).getWord_explain()));
                 System.out.println();
         }
     }
