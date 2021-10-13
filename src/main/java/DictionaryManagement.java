@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.ArrayList;
-
+import org.apache.commons.lang3.StringUtils;
 public class DictionaryManagement {
     public void insertFromCommandline() {
         Scanner scan = new Scanner(System.in);
@@ -43,3 +43,4 @@ public class DictionaryManagement {
         return a != null;
     }
 }
+
