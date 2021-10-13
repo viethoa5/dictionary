@@ -1,5 +1,9 @@
 import org.apache.commons.lang3.StringUtils;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class DictionaryCommandline {
     DictionaryManagement manage = new DictionaryManagement();
     public void showAllWords() {
@@ -14,5 +18,13 @@ public class DictionaryCommandline {
     public void dictionaryBasic() {
         manage.insertFromCommandline();
         showAllWords();
+    }
+
+    public void dictionaryAdvanced() throws IOException {
+        this.manage.insertFromFile();
+        this.showAllWords();
+        Scanner sc = new Scanner(System.in);
+        String tar = sc.next().toLowerCase();
+        this.manage.dictionaryLookup(tar);
     }
 }
