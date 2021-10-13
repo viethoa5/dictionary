@@ -28,13 +28,13 @@ public class DictionaryCommandline {
     public void dictionarySearcher() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập từ cần tìm: ");
-        String wordSearch = sc.next();
+        String wordSearch = sc.nextLine();
         wordSearch.toLowerCase();
         try {
             File inFile = new File("dictionaries.txt");
             FileReader fileReader = new FileReader(inFile);
             BufferedReader reader = new BufferedReader(fileReader);
-            String line = null;
+            String line ;
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith(wordSearch)) {
                     System.out.println(line);

@@ -56,7 +56,7 @@ public class DictionaryManagement {
     public void addWord() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần thêm vào (tiếng Anh): ");
-        String word_target = sc.next();
+        String word_target = sc.nextLine();
         System.out.print("Nhập nghĩa từ mới: ");
         String word_explain = sc.nextLine();
         Word newWord = new Word(word_target, word_explain);
@@ -78,7 +78,7 @@ public class DictionaryManagement {
     public void editWord() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần sửa(tiếng Anh): ");
-        String wordEdit = sc.next();
+        String wordEdit = sc.nextLine();
         for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
             if (Dictionary.wordArrays.get(i).getWord_target().equals(wordEdit)) {
                 System.out.print("Nhập nghĩa mong muốn: ");
