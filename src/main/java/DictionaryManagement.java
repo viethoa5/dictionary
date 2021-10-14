@@ -55,10 +55,10 @@ public class DictionaryManagement {
     public void addWord() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần thêm vào (tiếng Anh): ");
-        String word_target = sc.nextLine();
+        String new_target = sc.nextLine();
         System.out.print("Nhập nghĩa từ mới: ");
-        String word_explain = sc.nextLine();
-        Word newWord = new Word(word_target, word_explain);
+        String new_explain = sc.nextLine();
+        Word newWord = new Word(new_target, new_explain);
         Dictionary.wordArrays.add(newWord);
     }
 
@@ -76,13 +76,14 @@ public class DictionaryManagement {
 
     public void editWord() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhập từ cần sửa(tiếng Anh): ");
+        System.out.print("Nhập từ cần sửa (tiếng Anh): ");
         String wordEdit = sc.nextLine();
         for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
             if (Dictionary.wordArrays.get(i).getWord_target().equals(wordEdit)) {
                 System.out.print("Nhập nghĩa mong muốn: ");
-                String new_target = sc.nextLine();
-                Dictionary.wordArrays.get(i).setWord_explain(new_target);
+                String new_explain = sc.nextLine();
+                Dictionary.wordArrays.get(i).setWord_explain(new_explain);
+                break;
             }
         }
     }

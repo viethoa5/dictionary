@@ -28,20 +28,10 @@ public class DictionaryCommandline {
         System.out.println("Nhập từ cần tìm: ");
         String wordSearch = sc.next();
         wordSearch.toLowerCase();
-        try {
-            File inFile = new File("dictionaries.txt");
-            FileReader fileReader = new FileReader(inFile);
-            BufferedReader reader = new BufferedReader(fileReader);
-            String line = new String();
-            while ((line = reader.readLine()) != null) {
-                if (line.startsWith(wordSearch)) {
-                    System.out.println(line);
-                }
+        for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
+            if (Dictionary.wordArrays.get(i).getWord_target().startsWith(wordSearch)) {
+                System.out.println(Dictionary.wordArrays.get(i).getWord_target() + ": " + Dictionary.wordArrays.get(i).getWord_explain());
             }
-            reader.close();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
