@@ -1,31 +1,32 @@
 and và
 bad tồi
-beautiful đẹp
-bird con chim
-blow thổi
+beautiful   đẹp
+bird    con chim
+blow    thổi
 bye tạm biệt
-computer máy tính
+computer    máy tính
 end kết thúc
-enemy kẻ thù
+enemy   kẻ thù
 evening buổi chiều
 fan quạt
-fast nhanh
-father bố
-good tốt
-hello xin chào
-high cao
-jump nhảy
-love yêu
-math toán học
+fast    nhanh
+father  bố
+good    tốt
+hello   xin chào
+high    cao
+jump    nhảy
+love    yêu
+math    toán học
 morning buổi sáng
-mother mẹ
+mother  mẹ
 new mới
-night buổi tối
+night   buổi tối
 old cũ
-phone điện thoại
-short ngắn
-sleep ngủ
+phone   điện thoại
+short   ngắn
+sleep   ngủ
 son con trai
-study học
-swim bơi
+study   học
+swim    bơi
 old Già
+long    ngắn

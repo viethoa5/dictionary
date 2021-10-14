@@ -11,9 +11,19 @@ public class DictionaryManagement {
         for (int i = 0; i < numbers; i++) {
             String define = scan.nextLine();
             String meaning = scan.nextLine();
-            Word words    = new Word(define,meaning);
+            Word words = new Word(define, meaning);
             Dictionary.wordArrays.add(words);
         }
+    }
+
+
+
+    public boolean dictionaryLookup(String tar) {
+        Word a = (Word) Dictionary.wordArrays.stream().filter((w) -> {
+            return tar.equals(w.getWord_target());
+        }).findFirst().orElse(null);
+        System.out.println(a.getWord_target() + ": " + a.getWord_explain());
+        return a != null;
     }
 
     public void insertFromFile() throws IOException {
@@ -30,15 +40,6 @@ public class DictionaryManagement {
             }
         }
     }
-
-    public boolean dictionaryLookup(String tar) {
-        Word a = (Word)Dictionary.wordArrays.stream().filter((w) -> {
-            return tar.equals(w.getWord_target());
-        }).findFirst().orElse(null);
-        System.out.println(a.getWord_target() + ": " + a.getWord_explain());
-        return a != null;
-    }
-
     public void dictionaryExportToFile() {
         try {
             FileWriter writer = new FileWriter("dictionaries.txt");
