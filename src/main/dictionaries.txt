@@ -21,10 +21,10 @@ morning	buổi sáng
 mother	mẹ
 new	mới
 night	buổi tối
-old	cũ
-phone	điện thoại
-short	ngắn
-sleep	ngủ
-son	con trai
-study	học
-swim	bơi
+old cũ
+phone   điện thoại
+short   ngắn
+sleep   ngủ
+son	con     trai
+study   học
+swim    bơi
