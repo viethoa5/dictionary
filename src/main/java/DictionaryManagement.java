@@ -18,13 +18,20 @@ public class DictionaryManagement {
 
 
 
-    public boolean dictionaryLookup(String tar) {
-        Word a = (Word) Dictionary.wordArrays.stream().filter((w) -> {
-            return tar.equals(w.getWord_target());
-        }).findFirst().orElse(null);
-        System.out.println(a.getWord_target() + ": " + a.getWord_explain());
-        return a != null;
+    public void dictionaryLookup() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\t\t\t\tNhập từ hoàn chỉnh mà bạn cần tìm nghĩa");
+        String  searchword = scan.nextLine();
+                searchword = searchword.toLowerCase();
+        for(int i = 0; i < Dictionary.wordArrays.size(); i++) {
+            if(Dictionary.wordArrays.get(i).getWord_target().equals(searchword)) {
+                System.out.println("\t\t\t\tResult: " + Dictionary.wordArrays.get(i).getWord_explain() + "\n");
+                return;
+            }
+        }
+        System.out.println("\t\t\t\tYour word haven't been added in our dictionary yet");
     }
+
 
     public void insertFromFile() throws IOException {
         Scanner scanner = new Scanner(Paths.get("src/main/dictionaries.txt"), "UTF-8");
@@ -56,8 +63,10 @@ public class DictionaryManagement {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần thêm vào (tiếng Anh): ");
         String new_target = sc.nextLine();
+               new_target = new_target.toLowerCase();
         System.out.print("Nhập nghĩa từ mới: ");
         String new_explain = sc.nextLine();
+               new_explain = new_explain.toLowerCase();
         Word newWord = new Word(new_target, new_explain);
         Dictionary.wordArrays.add(newWord);
     }
@@ -66,25 +75,29 @@ public class DictionaryManagement {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần xóa (tiếng Anh): ");
         String wordDelete = sc.next();
+               wordDelete = wordDelete.toLowerCase();
         for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
             if (Dictionary.wordArrays.get(i).getWord_target().equals(wordDelete)) {
                 Dictionary.wordArrays.remove(i);
-                break;
+                return;
             }
         }
+        System.out.println("\t\t\t\tYour word haven't been add in our dictionary yet");
     }
 
     public void editWord() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập từ cần sửa (tiếng Anh): ");
         String wordEdit = sc.nextLine();
+               wordEdit = wordEdit.toLowerCase();
         for (int i = 0; i < Dictionary.wordArrays.size(); i++) {
             if (Dictionary.wordArrays.get(i).getWord_target().equals(wordEdit)) {
                 System.out.print("Nhập nghĩa mong muốn: ");
                 String new_explain = sc.nextLine();
                 Dictionary.wordArrays.get(i).setWord_explain(new_explain);
-                break;
+                return;
             }
         }
+        System.out.println("\t\t\t\tYour word haven't been added in our dictionary yet");
     }
 }
