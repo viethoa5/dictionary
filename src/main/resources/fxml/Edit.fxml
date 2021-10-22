@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="294.0" prefWidth="371.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditControll">
+    <children>
+        <TextField fx:id="fix_word" layoutX="142.0" layoutY="71.0" />
+        <Label alignment="CENTER" layoutX="34.0" layoutY="74.0" prefHeight="18.0" prefWidth="62.0" text="newword" />
+        <TextField fx:id="fix_meaning" layoutX="142.0" layoutY="166.0" />
+        <Label alignment="CENTER" layoutX="30.0" layoutY="170.0" prefHeight="18.0" prefWidth="70.0" text="newmean" />
+        <Button fx:id="confirm_fix" layoutX="155.0" layoutY="224.0" mnemonicParsing="false" text="submit" />
+    </children>
+</AnchorPane>
