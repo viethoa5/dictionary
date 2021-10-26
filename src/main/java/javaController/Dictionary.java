@@ -15,7 +15,7 @@ public class Dictionary {
     public  ArrayList<String> wordtarget = new ArrayList<>();
     public  ArrayList<String> wordmeaning = new ArrayList<>();
     public void insertFromFile() throws IOException {
-        Scanner scanner = new Scanner(Paths.get("D:\\dictionary\\src\\dictionaries.txt"), StandardCharsets.UTF_8);
+        Scanner scanner = new Scanner(Paths.get("src/dictionaries.txt"), StandardCharsets.UTF_8);
 
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {

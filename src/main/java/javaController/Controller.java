@@ -54,7 +54,7 @@ public class Controller implements Initializable {
     @FXML
     void speak(MouseEvent event) {
        String word =Word_list.getSelectionModel().getSelectedItem();
-       if(word.length() > 0) {
+       if(word != null) {
            list.listen(word);
        }
     }
